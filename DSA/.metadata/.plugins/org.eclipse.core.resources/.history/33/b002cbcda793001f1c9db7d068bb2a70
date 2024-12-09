@@ -1,0 +1,37 @@
+package com.demo.linkedlist;
+
+public class Linkedlist {
+	class Node{
+		int data;
+		Node next;
+		public Node(int data, Node next) {
+			super();
+			this.data = data;
+			this.next = null;
+		}
+		
+	}
+	
+	Node head;
+
+	public Linkedlist() {
+		super();
+		head = null;
+	}
+
+	public void addElement(int num) {
+		Node temp = head;
+		if(temp == null) {
+			temp.data = num;
+			head = temp;
+		}
+		else {
+			while(temp != null) {
+				temp = temp.next;
+			}
+			temp.data = num;
+		}
+	}
+	
+
+}

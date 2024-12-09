@@ -1,0 +1,9 @@
+package com.demo.linkedlist;
+
+public class Linkedlist {
+	class Node{
+		int data;
+		Node next;
+	}
+
+}

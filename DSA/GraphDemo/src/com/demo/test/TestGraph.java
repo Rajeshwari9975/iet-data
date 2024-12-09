@@ -1,0 +1,41 @@
+package com.demo.test;
+
+import java.util.Scanner;
+
+import com.demo.service.Graph;
+
+public class TestGraph {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in); 
+		System.out.println("Enter Number of Vertices");
+		int vertices = sc.nextInt();
+		
+		Graph g = new Graph(vertices);
+		
+		g.addVertex("A");
+		g.addVertex("B");
+		g.addVertex("C");
+		g.addVertex("D");
+		g.addVertex("E");
+		
+		g.addEdge("A", "C");
+		g.addEdge("C", "B");
+		g.addEdge("C", "D");
+		g.addEdge("C", "E");
+		g.addEdge("D", "E");
+		g.addEdge("D", "B");
+		
+		
+		g.addVertices("A");
+		g.addVertices("B");
+		g.addVertices("C");
+		g.addVertices("D");
+		g.addVertices("E");
+		
+		g.printGraph();
+		
+	}
+
+}

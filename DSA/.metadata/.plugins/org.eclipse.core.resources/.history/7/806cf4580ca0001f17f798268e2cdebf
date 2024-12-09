@@ -1,0 +1,9 @@
+package com.bst.test;
+
+public class TestBinaryTree {
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

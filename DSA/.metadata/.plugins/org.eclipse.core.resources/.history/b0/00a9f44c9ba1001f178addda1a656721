@@ -1,0 +1,10 @@
+package com.demo.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Graph {
+	
+	private HashMap<String, ArrayList<String>> hm = new HashMap<String, ArrayList<String>>();
+
+}

@@ -1,0 +1,103 @@
+1. List names of employees whose job is MANAGER.
+   SELECT Ename 
+   FROM EMP 
+   WHERE Job = 'MANAGER';
+
+2. List names of employees having salary greater than or equal to 3000.
+   SELECT Ename 
+   FROM EMP 
+   WHERE Sal >= 3000;
+
+3. List all employees having ‘A’ as the second letter in their names.
+   SELECT Ename 
+   FROM EMP 
+   WHERE Ename LIKE '_A%';
+
+4. List the Employee Number, Name, Hiredate, and Job Title of the Employees in Department 10.
+   SELECT Empno, Ename, Hiredate, Job 
+   FROM EMP 
+   WHERE Deptno = 10;
+
+5. Display the details of those Employees who earn a monthly Salary of more than 2000.
+   SELECT * 
+   FROM EMP 
+   WHERE Sal > 2000;
+
+6. Display the names of all Employees from Department 10 and 20 whose names start with “A” and end with “B”.
+   SELECT Ename 
+   FROM EMP 
+   WHERE (Deptno = 10 OR Deptno = 20) AND Ename LIKE 'A%B';
+
+7. Display the details of the employees who have joined on 21-DEC-1990.
+   SELECT * 
+   FROM EMP 
+   WHERE Hiredate = '1990-12-21';
+
+8. Display the Employee Code, Name, Job & Annual Salary for all Employees belonging to Department Number 10.
+   SELECT Empno, Ename, Job, Sal * 12 AS Annual_Salary 
+   FROM EMP 
+   WHERE Deptno = 10;
+
+9. Display the details of the Employees who earn an Annual salary of more than 25000. Sort the records in descending order of Salary.
+   SELECT * 
+   FROM EMP 
+   WHERE Sal * 12 > 25000 
+   ORDER BY Sal DESC;
+
+10. Display the names of Employees whose names contain the character “F”.
+    SELECT Ename 
+    FROM EMP 
+    WHERE Ename LIKE '%F%';
+
+11. Display the Names and Numbers of all Departments in the descending order of the Department Names.
+    SELECT Deptno, Dname 
+    FROM DEPT 
+    ORDER BY Dname DESC;
+
+12. Display the Name, Employee Number, Designation, and Salary of those Employees who earn a monthly salary of not less than 1000 and not more than 2000.
+    SELECT Ename, Empno, Job, Sal 
+    FROM EMP 
+    WHERE Sal BETWEEN 1000 AND 2000;
+
+13. Find out the Bonus (Bonus 1.1% of Annual Salary) that every person will receive at the end of the year.
+    SELECT Ename, Sal * 12 * 0.011 AS Bonus 
+    FROM EMP;
+
+14. Display the Name, Job, and Dept No. of all the Employees who either work in Department 30 or in Department 40.
+    SELECT Ename, Job, Deptno 
+    FROM EMP 
+    WHERE Deptno IN (30, 40);
+
+15. Display the Employee Number, Name for Clerks and Managers whose Salary is more than 1500.
+    SELECT Empno, Ename 
+    FROM EMP 
+    WHERE (Job = 'CLERK' OR Job = 'MANAGER') AND Sal > 1500;
+
+16. Display the Name, Annual Salary, and Commission as “Commission Earned” of all employees whose monthly salary is greater than their Commission. The output should be in decreasing order of salary. If two or more employees have the same salary, then sort them by name within the highest order of salary.
+    SELECT Ename, Sal * 12 AS Annual_Salary, Comm AS "Commission Earned" 
+    FROM EMP 
+    WHERE Sal > Comm 
+    ORDER BY Annual_Salary DESC, Ename;
+
+17. Display the Name and Job of sales executives or managers whose names end with the letter ‘S’.
+    SELECT Ename, Job 
+    FROM EMP 
+    WHERE (Job = 'SALESMAN' OR Job = 'MANAGER') AND Ename LIKE '%S';
+
+18. Display all the Names of the Employees whose Salary is either more than 1000 but not more than 2200.
+    SELECT Ename 
+    FROM EMP 
+    WHERE Sal > 1000 AND Sal <= 2200;
+
+19. Select Name & Salary of employees who are clerks.
+    SELECT Ename, Sal 
+    FROM EMP 
+    WHERE Job = 'CLERK';
+
+20. List the Department Number and Names of all Employees having Salary less than 2500.
+    SELECT Deptno, Ename 
+    FROM EMP 
+    WHERE Sal < 2500;
+
+21. List the Employee Number and the Name of the President.
+    SELECT Empno, Ename 

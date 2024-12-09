@@ -1,0 +1,28 @@
+package com.demo.test;
+
+import com.demo.service.Graph;
+
+public class TestGraph {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("Enter Number of Vertices");
+		Graph g = new Graph();
+		
+		g.addVertex("A");
+		g.addVertex("B");
+		g.addVertex("C");
+		g.addVertex("D");
+		g.addVertex("E");
+		
+		g.addEdge("A", "C");
+		g.addEdge("C", "B");
+		g.addEdge("C", "D");
+		g.addEdge("C", "E");
+		g.addEdge("D", "E");
+		g.addEdge("D", "B");
+		
+		g.printGraph();
+	}
+
+}

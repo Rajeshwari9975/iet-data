@@ -1,0 +1,21 @@
+package com.bst.test;
+
+import java.util.Scanner;
+
+import com.bst.demo.BinaryTree;
+
+public class TestBinaryTree {
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		BinaryTree bt = new BinaryTree();
+		
+		System.out.println("Enter Number");
+		int val = sc.nextInt();
+		
+		bt.addValue(val)
+		
+		
+	}
+
+}

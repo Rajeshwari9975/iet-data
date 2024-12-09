@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+https://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- bean definitions here -->
+   <!-- <context:annotation-config></context:annotation-config>
+   <context:component-scan base-package="com.demo"></context:component-scan> -->
+   
+  <!-- Without Autowire Type  
+  <bean id="p1" class="com.demo.beans.Product">
+   		<property name="pid" value="101"></property>
+   		<property name="pname" value="Table"></property>
+   		<property name="qty" value="50"></property>
+   		<property name="c" ref="c1"></property>
+   </bean>
+   
+   <bean id="p2" class="com.demo.beans.Product">
+   		<property name="pid" value="102"></property>
+   		<property name="pname" value="Chair"></property>
+   		<property name="qty" value="75"></property>
+   		<property name="c" ref="c1"></property>
+   </bean>
+   
+   <bean id="c1" class="com.demo.beans.Category">
+   		<property name="cid" value="105"></property>
+   		<property name="cname" value="Furniture"></property>
+   </bean> -->
+   
+    <!-- Autowire Type :: byType
+    <bean id="p1" class="com.demo.beans.Product" autowire="byType">
+   		<property name="pid" value="101"></property>
+   		<property name="pname" value="Table"></property>
+   		<property name="qty" value="50"></property>
+   </bean>
+   
+   <bean id="p2" class="com.demo.beans.Product" autowire="byType">
+   		<property name="pid" value="102"></property>
+   		<property name="pname" value="Chair"></property>
+   		<property name="qty" value="75"></property>
+   </bean>
+   
+   <bean id="c1" class="com.demo.beans.Category">
+   		<property name="cid" value="105"></property>
+   		<property name="cname" value="Furniture"></property>
+   </bean> -->
+   
+   <bean id="p1" class="com.demo.beans.Product" autowire="byName">
+   		<property name="pid" value="101"></property>
+   		<property name="pname" value="Table"></property>
+   		<property name="qty" value="50"></property>
+   </bean>
+   
+   <bean id="p2" class="com.demo.beans.Product" autowire="byName">
+   		<property name="pid" value="102"></property>
+   		<property name="pname" value="Chair"></property>
+   		<property name="qty" value="75"></property>
+   </bean>
+   
+   <bean id="c1" class="com.demo.beans.Category">
+   		<property name="cid" value="105"></property>
+   		<property name="cname" value="Furniture"></property>
+   </bean>
+   
+   <bean id="c2" class="com.demo.beans.Category">
+   		<property name="cid" value="160"></property>
+   		<property name="cname" value="Furniture"></property>
+   </bean>
+
+</beans>

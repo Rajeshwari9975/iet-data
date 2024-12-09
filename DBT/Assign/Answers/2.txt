@@ -1,0 +1,92 @@
+1. Display the Employee Name, Job, and Start Date of Employees hired from February 1981 to May 1981.
+   SELECT Ename AS "Employee Name", Job, Hiredate AS "Start Date"
+   FROM EMP
+   WHERE Hiredate BETWEEN '1981-02-01' AND '1981-05-31';
+
+2. Display the Name and Hiredate of every Employee who was hired in 1982.
+   SELECT Ename AS "Employee Name", Hiredate
+   FROM EMP
+   WHERE YEAR(Hiredate) = 1982;
+
+3. Write a query to display the current date. Label the column as Current Date.
+   SELECT CURRENT_DATE AS "Current Date";
+
+4. Display the Employee’s Name, Hiredate, Salary, and Review Date, which is the first Monday after six months of service.
+   SELECT Ename AS "Employee Name", Hiredate, Sal AS "Salary",
+          DATEADD(DAY, (7 - DATEPART(WEEKDAY, DATEADD(MONTH, 6, Hiredate))) % 7, DATEADD(MONTH, 6, Hiredate)) AS "Review Date"
+   FROM EMP;
+
+5. Modify the query to display the dates as “Sunday, the Seventh of September, 1981”.
+   SELECT Ename AS "Employee Name", 
+          FORMAT(Hiredate, 'dddd, the d\'th\' of MMMM, yyyy') AS "Formatted Hire Date"
+   FROM EMP;
+
+6. Create a query to display the name and salary for all Employees. Format the salary to be 15 characters long by adding ‘$’.
+   SELECT Ename AS "Employee Name", 
+          FORMAT(Sal, 'C', 'en-US') AS "Formatted Salary"
+   FROM EMP;
+
+7. Display the Name, Hiredate, and day of the week on which the employees started. Order the results by the Day of the week starting with Monday.
+   SELECT Ename AS "Employee Name", Hiredate, DATENAME(WEEKDAY, Hiredate) AS "Day of the Week"
+   FROM EMP
+   ORDER BY DATEPART(WEEKDAY, Hiredate);
+
+8. Display details of orders received in the year 1986.
+   SELECT *
+   FROM ORD
+   WHERE YEAR(OrderDate) = 1986;
+
+9. Write a query to find out the DAY (for example, SUNDAY) of the current date.
+   SELECT DATENAME(WEEKDAY, CURRENT_DATE) AS "Current Day";
+
+10. Display the name and the date of joining of the employees who belong to department number 10. The date of joining should be formatted.
+    SELECT UPPER(Ename) AS "Employee Name", 
+           FORMAT(Hiredate, 'dd\'th\' MMMM, yyyy') AS "Formatted Hire Date"
+    FROM EMP
+    WHERE Deptno = 10;
+
+11. Consider the Ord table. Find the difference between the Order Date and Ship Date in months as well as days. Label the columns appropriately.
+    SELECT OrderID,  
+           DATEDIFF(MONTH, OrderDate, ShipDate) AS "Difference in Months",
+           DATEDIFF(DAY, OrderDate, ShipDate) AS "Difference in Days"
+    FROM ORD;
+
+12. List employee details who have joined in December.
+    SELECT *
+    FROM EMP
+    WHERE MONTH(Hiredate) = 12;
+
+13. Display the day on which KING joined.
+    SELECT DATENAME(WEEKDAY, Hiredate) AS "Day KING Joined"
+    FROM EMP
+    WHERE Ename = 'KING';
+
+14. Display the month on which MARTIN joined.
+    SELECT DATENAME(MONTH, Hiredate) AS "Month MARTIN Joined"
+    FROM EMP
+    WHERE Ename = 'MARTIN';
+
+15. Find the number of days elapsed between today’s date and hire date of ‘ADAMS’.
+    SELECT DATEDIFF(DAY, Hiredate, CURRENT_DATE) AS "Days Elapsed"
+    FROM EMP
+    WHERE Ename = 'ADAMS';
+
+16. Print the date, 15 days after today’s date.
+    SELECT DATEADD(DAY, 15, CURRENT_DATE) AS "Date After 15 Days";
+
+17. List all employees hired in the month of December.
+    SELECT *
+    FROM EMP
+    WHERE MONTH(Hiredate) = 12;
+
+18. List all employees hired after 1980.
+    SELECT *
+    FROM EMP
+    WHERE YEAR(Hiredate) > 1980;
+
+19. Display names and jobs of employees in the format SMITH-CLERK.
+    SELECT CONCAT(Ename, '-', Job) AS "Employee Info"
+    FROM EMP;
+
+20. Show the length of names in the EMP table. Eliminate duplicate lengths. Do not show the names.
+    SELECT DISTINCT LEN

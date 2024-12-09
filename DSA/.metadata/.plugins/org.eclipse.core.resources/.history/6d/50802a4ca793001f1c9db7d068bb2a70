@@ -1,0 +1,9 @@
+package com.demo.linkedlist;
+
+public class TestLinkedList {
+
+	public static void main(String[] args) {
+		Linkedlist lst = new Linkedlist();
+		
+	}
+}

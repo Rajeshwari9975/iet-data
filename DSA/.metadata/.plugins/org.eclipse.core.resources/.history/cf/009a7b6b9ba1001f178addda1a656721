@@ -1,0 +1,16 @@
+package com.demo.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class Graph {
+	
+	private HashMap<String, ArrayList<String>> hm = new HashMap<String, ArrayList<String>>();
+	
+	public void addVertex(String vertex) {
+		if(hm.get(vertex) == null) {
+			hm.put(vertex, new ArrayList<String>());
+		}
+	}
+
+}

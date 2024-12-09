@@ -1,0 +1,11 @@
+package com.bst.test;
+
+import com.bst.demo.BinaryTree;
+
+public class TestBinaryTree {
+	
+	public static void main(String[] args) {
+		BinaryTree bt = new BinaryTree();
+	}
+
+}

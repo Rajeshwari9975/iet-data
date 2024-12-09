@@ -1,0 +1,110 @@
+package com.bst.demo;
+
+public class BinaryTree {
+	
+	class Node{
+		int data;
+		Node left;
+		Node right;
+		public Node(int data) {
+			super();
+			this.data = data;
+			this.left = null;
+			this.right = null;
+		}
+	}
+	
+	Node root;
+
+	public BinaryTree() {
+		super();
+		this.root = null;
+	}
+
+	public void addValue(int val) {
+		//root = addDataToTree(root,val);
+		Node newNode = new Node(val);
+		if(root == null) {
+			root = newNode;
+			
+		}
+		else {
+			if(val < root.data) {
+				addDataToTree(root.left, val);
+			}
+			else {
+				addDataToTree(root.right, val);
+			}
+		}
+	}
+
+//	private Node addDataToTree(Node root, int val) {
+//		Node newNode = new Node(val);
+//		
+//		if(root == null) {
+//			root = newNode;
+//			
+//		}
+//		else {
+//			if(val < root.data) {
+//				addDataToTree(root.left, val);
+//			}
+//			else {
+//				addDataToTree(root.right, val);
+//			}
+//		}
+//		return root;
+//	}
+
+	public void displayTree() {
+		inOrder();
+		preOrder();
+		postOrder();
+	}
+
+	private void postOrder() {
+		System.out.println("Postorder Traversal");
+		postOrderTraverse(root);
+	}
+
+	private void postOrderTraverse(Node root) {
+		if(root != null) {
+			postOrderTraverse(root.left);
+			postOrderTraverse(root.right);
+			System.out.print(root.data+"  ");
+			System.out.println();
+		}
+	}
+
+	private void preOrder() {
+		System.out.println("Preorder Traversal");
+		preOrderTraverse(root);
+	}
+
+	private void preOrderTraverse(Node root) {
+		if(root != null) {
+			System.out.print(root.data+"  ");
+			preOrderTraverse(root.left);
+			preOrderTraverse(root.right);
+			System.out.println();
+		}
+	}
+
+	private void inOrder() {
+		System.out.println("Inorder Traversal");
+		inOrderTraverse(root);
+	}
+
+	private void inOrderTraverse(Node root) {
+		if(root != null) {
+			inOrderTraverse(root.left);
+			System.out.print(root.data+"  ");
+			inOrderTraverse(root.right);
+			System.out.println();
+		}
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,47 @@
+1. Retrieve the entire contents of the EMP table.
+SELECT * FROM EMP;
+
+2. Print the names of employees.
+SELECT Ename FROM EMP;
+
+3. Retrieve the list of names and jobs of employees.
+SELECT Ename, Job FROM EMP;
+
+4. List of various departments available from the DEPT table.
+SELECT DISTINCT Dname FROM DEPT;
+
+5. List all information about the Employees of the EMP table.
+SELECT * FROM EMP;
+
+6. Show the information of the Department table.
+SELECT * FROM DEPT;
+
+7. Display the contents of the column Empno, Ename as Employee Name and Sal from the EMP table.
+SELECT Empno, Ename AS "Employee Name", Sal FROM EMP;
+
+8. Display the Job, Comm, and Ename from the EMP table with customized column headings.
+SELECT Job AS "Job Title", Comm AS "Commission", Ename AS "Employee Name" FROM EMP;
+
+9. Display the location as “Location” and names of all the departments as “Department Names”.
+SELECT Location AS "Location", Dname AS "Department Names" FROM DEPT;
+
+10. List the different Manager Codes.
+SELECT DISTINCT Mgr FROM EMP;
+
+11. Concatenate the Emp No, Name, and Mgr Code. Display output with spaces in the columns.
+SELECT CONCAT(Empno, ' ', Ename, ' ', Mgr) AS "Employee Info" FROM EMP;
+
+12. Display all the data from the EMP table, separate each column by a comma.
+SELECT CONCAT_WS(',', Empno, Ename, Job, Sal, Mgr) AS "Employee Data" FROM EMP;
+
+13. Modify the above query to add a column that will subtract the Old Salary from the New Salary.
+SELECT Empno, Ename, Job, Sal, Mgr, (New_Salary - Old_Salary) AS "Salary Difference" FROM EMP;
+
+14. Write a query that produces the following for each employee: <employee name> earns <salary> monthly, but wants salary <3 times salary>. Label the columns Dream Salaries.
+SELECT CONCAT(Ename, ' earns ', Sal, ' monthly, but wants salary ', (Sal * 3)) AS "Dream Salaries" FROM EMP;
+
+15. Display different types of positions available in the Company.
+SELECT DISTINCT Job FROM EMP;
+
+16. Using the sales table, you need to report the following.
+SELECT SalesID AS "Sales ID", EmployeeID AS "Employee ID", Amount AS "Sales Amount", SaleDate AS "Date of Sale" FROM Sales;

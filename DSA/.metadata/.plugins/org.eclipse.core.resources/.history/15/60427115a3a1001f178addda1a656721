@@ -1,0 +1,10 @@
+package com.demo.service;
+
+public class MyLinkedList {
+	
+	class Node{
+		String data;
+		Node next;
+	}
+
+}
